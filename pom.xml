@@ -1,0 +1,88 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.webee</groupId>
+    <artifactId>test</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>test</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <github.global.server>github</github.global.server>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <url>file://${project.basedir}/mvn-repo/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>file://${project.basedir}/mvn-repo/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <!--<repositories>-->
+        <!--<repository>-->
+            <!--<id>webee-mvn-repo</id>-->
+            <!--<url>https://raw.github.com/webee/test/master/mvn-repo</url>-->
+            <!--<releases>-->
+                <!--<enabled>true</enabled>-->
+            <!--</releases>-->
+            <!--<snapshots>-->
+                <!--<enabled>true</enabled>-->
+            <!--</snapshots>-->
+        <!--</repository>-->
+    <!--</repositories>-->
+
+    <build>
+        <!--<plugins>-->
+            <!--<plugin>-->
+                <!--<groupId>com.github.github</groupId>-->
+                <!--<artifactId>site-maven-plugin</artifactId>-->
+                <!--<version>0.8</version>-->
+                <!--<configuration>-->
+                    <!--<message>Maven artifacts for ${project.version}</message>  &lt;!&ndash; git commit message &ndash;&gt;-->
+                    <!--<noJekyll>true</noJekyll>                                  &lt;!&ndash; disable webpage processing &ndash;&gt;-->
+                    <!--<outputDirectory>${project.basedir}/mvn-repo</outputDirectory> &lt;!&ndash; matches distribution management repository url above &ndash;&gt;-->
+                    <!--<branch>refs/heads/mvn-repo</branch>                       &lt;!&ndash; remote branch name &ndash;&gt;-->
+                    <!--<includes>-->
+                        <!--<include>-->
+                            <!--**/*-->
+                        <!--</include>-->
+                    <!--</includes>-->
+                    <!--<repositoryName>test</repositoryName>      &lt;!&ndash; github repo name &ndash;&gt;-->
+                    <!--<repositoryOwner>webee</repositoryOwner>    &lt;!&ndash; github username  &ndash;&gt;-->
+                <!--</configuration>-->
+                <!--<executions>-->
+                    <!--&lt;!&ndash; run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase &ndash;&gt;-->
+                    <!--<execution>-->
+                        <!--<goals>-->
+                            <!--<goal>site</goal>-->
+                        <!--</goals>-->
+                        <!--<phase>deploy</phase>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
+        <!--</plugins>-->
+        <extensions>
+            <extension>
+                <artifactId>wagon-webdav-jackrabbit</artifactId>
+                <groupId>org.apache.maven.wagon</groupId>
+                <version>2.2</version>
+            </extension>
+        </extensions>
+    </build>
+</project>
