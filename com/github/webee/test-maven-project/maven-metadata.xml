@@ -4,8 +4,8 @@
   <artifactId>test-maven-project</artifactId>
   <versioning>
     <versions>
-      <version>1.1-SNAPSHOT</version>
+      <version>1.0-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20140417094856</lastUpdated>
+    <lastUpdated>20140417125153</lastUpdated>
   </versioning>
 </metadata>
